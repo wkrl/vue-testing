@@ -22,12 +22,12 @@ export default {
     methods: {
       updateSelection() { 
         this.selection = ""
-        this.selection = window.getSelection()
+        this.selection = window.getSelection().toString()
       },
       checkSelection() {
         let text = this.selection.toString()
         return text && text !== " " 
-      }
+      },
     }
 }
 </script>
