@@ -41,6 +41,10 @@ export default {
 </script>
 
 <style>
+li:hover {
+	color: black; 
+	background-color:#F9CB33; 
+}
 .tooltip {
   position: relative;
   display: inline-block;
@@ -57,6 +61,6 @@ export default {
   text-align: center;
 	font-size: 0.9em; 
   border-radius: 6px;
-  padding: 5px 0;
+	padding: 3px 0; 
 }
 </style>
