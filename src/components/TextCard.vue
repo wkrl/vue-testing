@@ -54,6 +54,7 @@ export default {
       updateSelection() { 
         this.selection = ""
         this.selection = window.getSelection().toString()
+        
         // check if match with annotations exists
         this.getAnnotationMatch()
       },
@@ -65,8 +66,12 @@ export default {
         this.queries = []
         if (this.checkSelection()) {
           for (let obj of this.annotations) {
-            for (let annotation of Object.keys(obj)) for (let word of annotation.split(" "))
-              if (word === this.selection) this.queries.push(annotation)
+            for (let annotation of Object.keys(obj)) {
+              if (annotation === this.selection) this.queries.push(annotation)
+              for (let word of annotation.split(" ")) {
+                if (word === this.selection) this.queries.push(annotation)
+              }
+            }
           }
         }
       }
