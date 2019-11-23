@@ -9,9 +9,6 @@
         :caseSensitive="false"
       > {{ description }} </text-highlight>
     </div>
-    <div class="w-auto p-4 my-4 rounded shadow-lg text-center">
-      {{ checkSelection() ? "Selected text: " + selection : "Select text"}}
-    </div>
   </div>
 </template>
 
@@ -27,7 +24,7 @@ export default {
           annotations: [
             {"corneal ectasia" : [
               "C0152194 Irregular astigmatism (Disease or Syndrome)",
-              "C0339684 Irregular astigmatism - corneal (Disease or Syndrome)",
+              "C0339684 Irregular astigmatism - corneal  (Disease or Syndrome)",
               "C0339685 Irregular astigmatism - lenticular (Disease or Syndrome)",
               "C2881350 Irregular astigmatism of right eye (Disease or Syndrome)",
               "C2881351 Irregular astigmatism of left eye (Disease or Syndrome)",
