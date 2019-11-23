@@ -9,12 +9,10 @@
       v-if="hover"
       class="tooltiptext"
     >
-      <!-- stop on clicked event -->
       <input type="text" placeholder="Search for annotation">
       <ul>
         <li v-for="item in getInfoList()" :key="item">
           <div class="textfield" v-html="refactorItem(item)"></div> 
-          {{blabla}}
         </li>
       </ul>
     </div>
@@ -57,6 +55,7 @@ input {
   height: 32px; 
   border-radius: 4px; 
   padding-left: 8px !important;
+  color: black !important; 
 }
 .tooltip {
   position: relative;

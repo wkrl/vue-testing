@@ -9,7 +9,6 @@
         :caseSensitive="false"
       > {{ description }} </text-highlight>
     </div>
-    {{test}}
   </div>
 </template>
 
