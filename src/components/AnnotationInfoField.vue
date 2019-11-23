@@ -9,10 +9,10 @@
       v-if="hover"
       class="tooltiptext"
     >
-      <input type="text" placeholder="Search for annotation">
+      <input type="text" placeholder="Search for annotation" @input="updateSearch">
       <ul>
         <li v-for="item in getInfoList()" :key="item">
-          <div class="textfield" v-html="refactorItem(item)"></div> 
+          <div class="textfield" v-if="item.includes(searchTerm)" v-html="refactorItem(item)"></div> 
         </li>
       </ul>
     </div>
@@ -24,6 +24,7 @@ export default {
   data() {
     return {
       hover: false, 
+      searchTerm: "", 
     }
   },
   props: {
@@ -42,9 +43,12 @@ export default {
     refactorItem(item) {
     // find type and change string 
     // e.g.: Disease or Syndrome: C2881351 Irregular astigmatism of left eye 
-    let type = item.substring(item.indexOf("(")+1, item.indexOf(")"))
+    let type = item.substring(item.indexOf("(") + 1, item.indexOf(")"))
     return "<b>" + type + ": " + "</b>" + item.substring(0, item.indexOf("(") - 1)
     },
+    updateSearch(e) {
+      this.searchTerm = e.target.value
+    }
   }
 }
 </script>
