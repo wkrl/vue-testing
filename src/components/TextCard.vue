@@ -1,7 +1,7 @@
 <template>
   <div class="flex flex-col h-screen my-8 items-center bg-cover">
     <h1 class="text-xl font-semibold">TrainX mockup</h1>
-    <div class="w-2/4 p-4 my-4 rounded overflow-hidden shadow-lg text-center" @mouseup="updateSelection">
+    <div class="w-2/4 p-4 my-4 rounded overflow-visible shadow-lg text-center" @mouseup="updateSelection">
       <text-highlight 
         :queries="queries" 
         :baz="annotations"
