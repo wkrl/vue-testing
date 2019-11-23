@@ -14,6 +14,7 @@
       <ul>
         <li v-for="item in getInfoList()" :key="item">
           <div class="textfield" v-html="refactorItem(item)"></div> 
+          {{blabla}}
         </li>
       </ul>
     </div>
@@ -45,7 +46,7 @@ export default {
     // e.g.: Disease or Syndrome: C2881351 Irregular astigmatism of left eye 
     let type = item.substring(item.indexOf("(")+1, item.indexOf(")"))
     return "<b>" + type + ": " + "</b>" + item.substring(0, item.indexOf("(") - 1)
-    }
+    },
   }
 }
 </script>
@@ -74,7 +75,6 @@ input {
   font-size: 0.9em; 
   border-radius: 6px;
   padding: 12px; 
-  overflow: scroll;
 }
 .textfield {
   padding: 4px; 

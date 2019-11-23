@@ -1,7 +1,7 @@
 <template>
   <div class="flex flex-col h-screen my-8 items-center bg-cover">
     <h1 class="text-xl font-semibold">TrainX mockup</h1>
-    <div class="w-2/4 p-4 my-4 rounded overflow-visible shadow-lg text-center" @mouseup="updateSelection">
+    <div class="w-2/4 p-4 my-4 rounded overflow-visible shadow-lg text-center" @mouseup="checkEvent">
       <text-highlight 
         :queries="queries" 
         :baz="annotations"
@@ -9,6 +9,7 @@
         :caseSensitive="false"
       > {{ description }} </text-highlight>
     </div>
+    {{test}}
   </div>
 </template>
 
@@ -48,6 +49,9 @@ export default {
         }
     },
     methods: {
+      checkEvent(e) {
+        if (e.target.nodeName === "SPAN") this.updateSelection()
+      },
       updateSelection() { 
         this.selection = ""
         this.selection = window.getSelection().toString()
