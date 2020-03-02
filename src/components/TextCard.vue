@@ -2,25 +2,33 @@
   <div class="flex flex-col h-screen my-8 items-center bg-cover">
     <h1 class="text-xl font-semibold">TrainX mockup</h1>
     <div class="w-2/4 p-4 my-4 rounded overflow-visible shadow-lg text-center" @mouseup="checkEvent">
-      <text-highlight 
+       <Highlighter 
+      :searchWords="queries"      
+      :textToHighlight="description"/>
+      <!-- <text-highlight 
         :queries="queries" 
         :baz="annotations"
         :highlightComponent="AnnotationInfoField"
         :caseSensitive="false"
-      > {{ description }} </text-highlight>
+        highlightStyle="outline: 2px solid rgb(255, 0, 0);"
+      > {{ description }} </text-highlight> -->
     </div>
   </div>
 </template>
 
 <script>
 import AnnotationInfoField from '@/components/AnnotationInfoField.vue'
+import Highlighter from 'vue-highlight-words'
 
-export default {
+export default {    
+    components: {
+      Highlighter
+    },
     data() {
         return {
           AnnotationInfoField,
           selection: "", 
-          queries: [],
+          queries: ["Nationwide reduction", "reduction in", "reduction"],
           annotations: [
             {"corneal ectasia" : [
               "C0152194 Irregular astigmatism (Disease or Syndrome)",
